@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key, required this.title});
@@ -33,6 +34,16 @@ class _HomeScreenState extends State<HomeScreen> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            SizedBox(height: 10),
+            TextButton(
+              onPressed: () => context.go('/second-screen'),
+              child: Text('Navigate to \'Second Screen\''),
+            ),
+            SizedBox(height: 10),
+            TextButton(
+              onPressed: () => context.go('/sub-screen'),
+              child: Text('Navigate to \'Sub Screen\''),
             ),
           ],
         ),
